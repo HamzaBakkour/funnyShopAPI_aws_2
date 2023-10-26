@@ -1,0 +1,8 @@
+__pycache__
+online_shop_venv
+.env
+uploads
+migrations
+funnyshopAPI/db.sqlite3
+db.sqlite3
+.env_remote_backup

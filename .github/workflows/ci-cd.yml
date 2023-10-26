@@ -1,0 +1,23 @@
+name: Build, Test and Deploy Postgram
+
+on:
+    push:
+        branches: [ main ]
+
+jobs:
+
+
+  deploy:
+    name: Deploying on EC2 via SSH
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying Application on EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_EC2_IP }}
+          username: ${{ secrets.SSH_EC2_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~
+            ./download_latest_update_from_github_backend.sh
