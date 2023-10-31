@@ -39,8 +39,8 @@ class PaymentViewSet(ViewSet):
         session_data = {
             'mode': 'payment', #We use payment for a one-time payment.
             'client_reference_id': order.id, #The unique reference for this payment.
-            'success_url': "http://localhost:3000/success", #: The URL for Stripe to redirect the user to if the payment is successful.
-            'cancel_url': "http://localhost:3000/failed",
+            'success_url': "https://funnyshop.hamzabakkour.se/success", #: The URL for Stripe to redirect the user to if the payment is successful.
+            'cancel_url': "https://funnyshop.hamzabakkour.se/failed",
             'line_items': []
         }
 
